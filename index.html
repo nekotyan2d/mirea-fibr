@@ -10,6 +10,7 @@
         <meta property="og:title" content="nekotyan2d" />
         <meta property="og:description" content="Сайт nekotyan2d" />
         <link rel="stylesheet" href="css/app.css" />
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
         <header>
@@ -42,6 +43,28 @@
                         <a href="mailto:test@test.ru">test@test.ru</a>
                     </li>
                 </ul>
+                <button id="feedback">Обратная связь</button>
+                <dialog id="feedback-dialog">
+                    <h2>Обратная связь</h2>
+                    <form class="feedback-form" method="dialog" novalidate>
+                        <label for="input-name">Имя</label>
+                        <input name="name" id="input-name" minlength="2" required type="text"/>
+                        <label for="input-email">Email</label>
+                        <input name="email" id="input-email" required type="email"/>
+                        <label for="input-phone">Телефон</label>
+                        <input name="phone" id="input-phone" required type="tel" placeholder="+7 (___) ___-__-__" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"/>
+                        <label for="topic">Тема</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Выберите тему</option>
+                            <option>Вопрос</option>
+                            <option>Заказ</option>
+                        </select>
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button id="feedback-close">Закрыть</button>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </dialog>
             </section>
         </main>
         <footer>
