@@ -28,6 +28,11 @@ body {
     }
 }
 
+::selection {
+    background-color: var(--color-selection);
+    color: black;
+}
+
 main {
     max-width: 800px;
     width: 100%;

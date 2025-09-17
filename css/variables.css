@@ -12,6 +12,8 @@ html.theme-dark {
     --color-btn-background-pressed: #4ee24e;
     --color-btn-text: black;
 
+    --color-selection: #77f87c;
+
     --color-danger: #ff4b4b;
 }
 html.theme-light {
@@ -27,6 +29,8 @@ html.theme-light {
     --color-btn-background: #006b03;
     --color-btn-background-pressed: #048c09;
     --color-btn-text: white;
+
+    --color-selection: #77f87c;
 
     --color-danger: #ff4b4b;
 }
