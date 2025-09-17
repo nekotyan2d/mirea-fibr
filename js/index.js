@@ -2,6 +2,9 @@ let currentTheme = localStorage.getItem("app-theme") || "dark";
 document.documentElement.className = `theme-${currentTheme}`;
 
 window.addEventListener("load", () => {
+    document.querySelector(".theme-switcher__icon").src =
+        currentTheme == "dark" ? "assets/icons/dark-mode.svg" : "assets/icons/light-mode.svg";
+        
     const feedbackDialog = document.getElementById("feedback-dialog");
     const feedbackForm = document.querySelector(".feedback-dialog__form");
     const feedbackBtn = document.getElementById("feedback");
