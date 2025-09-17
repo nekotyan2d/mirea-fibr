@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="theme-dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,35 +10,43 @@
         <meta property="og:title" content="nekotyan2d | About" />
         <meta property="og:description" content="О nekotyan2d" />
         <link rel="stylesheet" href="css/app.css" />
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
 
     <body>
-        <header>
-            <nav>
-                <a href="/" class="logo">NEKOTYAN2D</a>
-                <ul>
-                    <li>
-                        <a href="about.html">About</a>
+        <header class="app-header">
+            <nav class="app-nav">
+                <a class="app-nav__logo" href="index.html">NEKOTYAN2D</a>
+                <ul class="app-nav__list">
+                    <li class="app-nav__item">
+                        <a class="app-nav__link" href="about.html">About</a>
                     </li>
-                    <li>
-                        <a href="contacts.html">Контакты</a>
+                    <li class="app-nav__item">
+                        <a class="app-nav__link" href="contacts.html">Контакты</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <nav aria-label="breadcrumbps">
+            <nav class="app-main__breadcrumbps" aria-label="breadcrumbps">
                 <a href="index.html">Главная</a> →
                 <span>О нас</span>
             </nav>
 
             <h1>About</h1>
-            <p>Умный человек в очках скачать обои</p>
+            <p>Только фото котов, а ты что хотел?</p>
+            <video autoplay controls width="600">
+                <source src="assets/videos/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </main>
-        <footer>
-            <div class="footer">
-                <p>&copy; 2025 nekotyan2d</p>
-                <p>Телефон: +7 (123) 456-78-90</p>
+        <footer class="app-footer">
+            <div class="app-footer__content">
+                <p class="app-footer__copyright">&copy; 2025 nekotyan2d</p>
+                <p class="app-footer__phone">Телефон: +7 (123) 456-78-90</p>
+                <button class="app-footer__theme-switcher" id="switch-theme" title="Сменить тему">
+                    <img class="theme-switcher__icon" src="assets/icons/dark-mode.svg" alt="theme-icon">
+                </button>
             </div>
         </footer>
     </body>

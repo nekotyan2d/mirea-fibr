@@ -1,8 +1,44 @@
-:root {
+html.theme-dark {
+    color-scheme: dark;
     --color-background: #000;
     --color-background-secondary: rgb(22, 24, 20);
+    --color-background-green: rgb(22, 24, 20);
     --color-text: #fff;
     --color-accent: #77f87c;
 
+    --color-border: #222;
+    
+    --color-btn-background: #77f87c;
+    --color-btn-background-pressed: #4ee24e;
+    --color-btn-text: black;
+
+    --color-danger: #ff4b4b;
+}
+html.theme-light {
+    color-scheme: light;
+    --color-background: white;
+    --color-background-secondary: rgb(251, 255, 247);
+    --color-background-green: rgb(240, 255, 226);
+    --color-text: black;
+    --color-accent: #006b03;
+
+    --color-border: #ccc;
+
+    --color-btn-background: #006b03;
+    --color-btn-background-pressed: #048c09;
+    --color-btn-text: white;
+
+    --color-danger: #ff4b4b;
+}
+
+:root {
+    --font-family: "Inter", sans-serif;
+
     --border-radius: 16px;
+    --border-radius-small: 4px;
+
+    --padding-normal: 16px;
+    --padding-thin: 8px;
+
+    --gap: 8px;
 }

@@ -1,0 +1,54 @@
+.hero {
+    background: url("../assets/images/hero.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-height: 50dvh;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    aspect-ratio: 16 / 9;
+
+    .hero__overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        padding: var(--padding-normal);
+        border-radius: var(--border-radius);
+        color: white;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero__title, .hero__subtitle {
+        margin: 0;
+    }
+}
+
+.photos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap);
+
+    .photos__item {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.meme-of-the-day {
+    img, source {
+        border-radius: var(--border-radius);
+    }
+}

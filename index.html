@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="theme-dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,32 +10,70 @@
         <meta property="og:title" content="nekotyan2d" />
         <meta property="og:description" content="Сайт nekotyan2d" />
         <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        <header>
-            <nav>
-                <a href="/" class="logo">NEKOTYAN2D</a>
-                <ul>
-                    <li>
-                        <a href="about.html">About</a>
+        <header class="app-header">
+            <nav class="app-nav">
+                <a class="app-nav__logo" href="index.html">NEKOTYAN2D</a>
+                <ul class="app-nav__list">
+                    <li class="app-nav__item">
+                        <a class="app-nav__link" href="about.html">About</a>
                     </li>
-                    <li>
-                        <a href="contacts.html">Контакты</a>
+                    <li class="app-nav__item">
+                        <a class="app-nav__link" href="contacts.html">Контакты</a>
                     </li>
                 </ul>
             </nav>
         </header>
-        <main>
-            <h1>Добро пожаловать на nekotyan2d!</h1>
-            <p>Это тестовая страница для проверки работы сайта.</p>
+        <main class="app-main">
+            <section class="hero">
+                <div class="hero__overlay">
+                    <h2 class="hero__title">Nekotyan2d</h2>
+                    <p class="hero__subtitle">Тут только коты, а вы что подумали?</p>
+                </div>
+            </section>
+            <section id="photos">
+                <h2>Последние фото</h2>
+                <div class="photos__grid">
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo1.jpg" alt="Cat 1">
+                    </div>
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo2.jpg" alt="Cat 2">
+                    </div>
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo3.jpg" alt="Cat 3">
+                    </div>
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo4.jpg" alt="Cat 4">
+                    </div>
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo5.jpg" alt="Cat 5">
+                    </div>
+                    <div class="photos__item">
+                        <img src="assets/images/cat-photo6.jpg" alt="Cat 6">
+                    </div>
+                </div>
+            </section>
+            <section id="meme-of-the-day">
+                <h2>Мем дня</h2>
+                <picture class="meme-of-the-day">
+                    <source media="(width >= 1400px)" srcset="assets/images/cat-photo7.jpg" />
+                    <source media="(width >= 800px)" srcset="assets/images/cat-photo8.jpg" />
+                    <source media="(width >= 600px)" srcset="assets/images/cat-photo9.jpg" />
+                    <img src="assets/images/cat-photo9.jpg" alt="Мем дня" />
+                </picture>
+            </section>
             <section id="about">
                 <h2>О нас</h2>
-                <p>Мы занимаемся разработкой и поддержкой веб-сайтов.</p>
+                <p>Мы публикуем мемы с котами</p>
                 <a href="#contacts">Связаться</a>
             </section>
             <section id="contacts">
                 <h2>Контакты</h2>
-                <p>Мои контакты:</p>
+                <p>Наши контакты:</p>
                 <ul>
                     <li>
                         Email:
@@ -44,10 +82,13 @@
                 </ul>
             </section>
         </main>
-        <footer>
-            <div class="footer">
-                <p>&copy; 2025 nekotyan2d</p>
-                <p>Телефон: +7 (123) 456-78-90</p>
+        <footer class="app-footer">
+            <div class="app-footer__content">
+                <p class="app-footer__copyright">&copy; 2025 nekotyan2d</p>
+                <p class="app-footer__phone">Телефон: +7 (123) 456-78-90</p>
+                <button class="app-footer__theme-switcher" id="switch-theme" title="Сменить тему">
+                    <img class="theme-switcher__icon" src="assets/icons/dark-mode.svg" alt="theme-icon">
+                </button>
             </div>
         </footer>
     </body>
