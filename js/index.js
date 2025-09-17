@@ -1,3 +1,6 @@
+let currentTheme = localStorage.getItem("app-theme") || "dark";
+document.documentElement.className = `theme-${currentTheme}`;
+
 window.addEventListener("load", () => {
     const feedbackDialog = document.getElementById("feedback-dialog");
     const feedbackForm = document.querySelector(".feedback-dialog__form");
@@ -38,4 +41,16 @@ window.addEventListener("load", () => {
             feedbackDialog.reset();
         });
     }
+
+    const themeSwitcher = document.getElementById("switch-theme");
+    themeSwitcher.addEventListener("click", switchTheme);
 });
+
+function switchTheme() {
+    currentTheme = currentTheme == "dark" ? "light" : "dark";
+    localStorage.setItem("app-theme", currentTheme);
+    document.documentElement.className = `theme-${currentTheme}`;
+
+    document.querySelector(".theme-switcher__icon").src =
+        currentTheme == "dark" ? "assets/icons/dark-mode.svg" : "assets/icons/light-mode.svg";
+}

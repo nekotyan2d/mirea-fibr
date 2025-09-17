@@ -63,6 +63,7 @@ button {
     outline: none;
     font-weight: bold;
     color: black;
+    cursor: pointer;
 }
 
 /* header */
@@ -106,8 +107,10 @@ button {
         width: 100%;
         margin: 0 auto;
         font-size: 14px;
-        grid-template-areas: "copyright ."
+        grid-template-areas: "copyright theme-switcher"
                              "phone .";
+        grid-template-columns: 1fr 40px;
+        align-items: center;
 
         .app-footer_copyright {
             grid-area: copyright;
@@ -115,6 +118,13 @@ button {
 
         .app-footer__phone {
             grid-area: phone;
+        }
+
+        .app-footer__theme-switcher {
+            width: 40px;
+            height: 40px;
+            background: none;
+            grid-area: theme-switcher;
         }
     }
 }
