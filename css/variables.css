@@ -1,8 +1,24 @@
-:root {
+html.theme-dark {
+    color-scheme: dark;
     --color-background: #000;
     --color-background-secondary: rgb(22, 24, 20);
     --color-text: #fff;
     --color-accent: #77f87c;
+}
+html.theme-light {
+    color-scheme: light;
+    --color-background: white;
+    --color-background-secondary: rgb(240, 255, 226);
+    --color-text: black;
+    --color-accent: #19c91f;
+}
+
+:root {
+    --font-family: "Inter", sans-serif;
 
     --border-radius: 16px;
+    --border-radius-small: 4px;
+
+    --padding-normal: 16px;
+    --padding-thin: 8px;
 }
