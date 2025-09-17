@@ -8,6 +8,7 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -15,16 +16,15 @@ body {
     flex-direction: column;
     min-height: 100vh;
     min-height: 100dvh;
+    min-width: 200px;
 }
 
 * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
 
     &:focus-visible {
         outline: 2px solid var(--color-accent);
-        outline-offset: 2px;
     }
 }
 
@@ -53,22 +53,40 @@ select {
     height: 50px;
     border-radius: var(--border-radius);
     padding: 0 4px;
+    border: 1px solid var(--color-border);
+
+    &:user-invalid {
+        outline: 2px solid var(--color-danger);
+    }
 }
 
 button {
-    background-color: var(--color-accent);
+    background-color: var(--color-btn-background);
     border-radius: var(--border-radius);
     height: 50px;
     border: none;
     outline: none;
     font-weight: bold;
-    color: black;
+    color: var(--color-btn-text);
     cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background-color: var(--color-btn-background-pressed);
+    }
+}
+
+img, picture {
+    display: block;
+}
+
+img, iframe {
+    max-width: 100%;
 }
 
 /* header */
 .app-header {
-    background-color: var(--color-background-secondary);
+    background-color: var(--color-background-green);
 
     .app-nav {
         display: flex;
@@ -99,7 +117,7 @@ button {
 
 /* footer */
 .app-footer {
-    background-color: var(--color-background-secondary);
+    background-color: var(--color-background-green);
 
     .app-footer__content {
         display: grid;
@@ -131,19 +149,4 @@ button {
 
 .app-main__breadcrumbps {
     font-size: 12px;
-}
-
-.feedback-dialog {
-    background-color: var(--color-background-secondary);
-    color: var(--color-text);
-    border: none;
-    border-radius: 16px;
-    max-width: 400px;
-    width: 100%;
-
-    .feedback-dialog__form {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
 }
