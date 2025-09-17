@@ -6,4 +6,4 @@
 
 ## Ссылки
 
--   [Публичная страница на Github Pages](https://nekotyan2d.github.com/mirea-fibr/)
+-   [Публичная страница на Github Pages](https://nekotyan2d.github.io/mirea-fibr/)
