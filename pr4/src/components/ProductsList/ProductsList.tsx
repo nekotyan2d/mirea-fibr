@@ -1,40 +1,26 @@
-import { useEffect, useState } from "react";
-import { api } from "../../api";
 import type { Product } from "../../../shared/types/app";
 import ProductItem from "../ProductItem/ProductItem";
 import "./ProductsList.scss";
 
-export default function ProductsList() {
-    const [products, setProducts] = useState(new Array<Product>());
-    const [loading, setLoading] = useState(true);
+interface Props {
+    products: Product[];
+    onDelete: (id: string) => void;
+    onEdit: (id: string) => void;
+}
 
-    useEffect(() => {
-        loadProducts();
-    }, []);
-
-    async function loadProducts() {
-        try {
-            const data = await api.getProducts();
-            setProducts(data.products);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
-    }
-
+export default function ProductsList(props: Props) {
     function onDelete(id: string) {
-        setProducts(products.filter((product) => product.id !== id));
+        props.onDelete(id);
     }
 
     return (
         <div className="products-list">
-            {loading}
-            {products.map((product) => (
+            {props.products.map((product) => (
                 <ProductItem
                     data={product}
                     key={product.id}
                     onDelete={() => onDelete(product.id)}
+                    onEdit={() => props.onEdit(product.id)}
                 />
             ))}
         </div>

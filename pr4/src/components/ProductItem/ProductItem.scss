@@ -9,7 +9,17 @@
         margin: 0;
     }
 
+    &__tech-data {
+        display: flex;
+        gap: 8px;
+    }
+
     &__id {
+        color: #757575;
+        font-size: 12px;
+    }
+
+    &__category {
         color: #757575;
         font-size: 12px;
     }
@@ -64,5 +74,14 @@
         flex-direction: column;
         justify-content: space-between;
         text-align: right;
+    }
+
+    .star {
+        &--filled {
+            color: #f3d56a;
+        }
+        &--empty {
+            color: #757575;
+        }
     }
 }

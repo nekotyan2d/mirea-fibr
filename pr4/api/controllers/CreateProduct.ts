@@ -18,5 +18,5 @@ export function createProduct(req: Request, res: Response) {
 
     dbCreateProduct(newProduct);
 
-    return res.status(200).json({ message: "Product created" });
+    return res.status(200).json({ message: "Product created", product: newProduct });
 }

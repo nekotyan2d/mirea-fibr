@@ -14,9 +14,13 @@ interface InfoResponse {
     message: string;
 }
 
+interface CreateProductResponse extends InfoResponse {
+    product: Product;
+}
+
 export const api = {
     createProduct: async (product: ProductBody) => {
-        let response = await apiClient.post<InfoResponse>("/products", product);
+        let response = await apiClient.post<CreateProductResponse>("/products", product);
         return response.data;
     },
     getProducts: async () => {

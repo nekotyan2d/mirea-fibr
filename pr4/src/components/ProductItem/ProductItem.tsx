@@ -5,6 +5,7 @@ import { api } from "../../api";
 interface Props {
     data: Product;
     onDelete: () => void;
+    onEdit: (id: string) => void;
 }
 
 export default function ProductItem(props: Props) {
@@ -25,7 +26,27 @@ export default function ProductItem(props: Props) {
             />
             <div className="product__texts">
                 <h2 className="product__title">{props.data.name}</h2>
-                <div className="product__id">#{props.data.id}</div>
+                <div className="product__rating">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                        <svg
+                            key={star}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            className={star <= (props.data.rating || 0) ? "star--filled" : "star--empty"}>
+                            <path
+                                fill="currentColor"
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                            />
+                        </svg>
+                    ))}
+                </div>
+                <div className="product__tech-data">
+                    <span className="product__id">#{props.data.id}</span>
+                    <span className="product__category">{props.data.category}</span>
+                </div>
+
                 <p className="product__description">{props.data.description}</p>
                 <div className="product__price">
                     <span className="product__price-val">{props.data.price}</span>
@@ -34,7 +55,9 @@ export default function ProductItem(props: Props) {
             </div>
             <div className="product__right-content">
                 <div className="product__actions">
-                    <button className="product__edit">
+                    <button
+                        className="product__edit"
+                        onClick={() => props.onEdit(props.data.id)}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="32"
