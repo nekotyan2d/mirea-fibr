@@ -11,7 +11,7 @@ interface Props {
 export default function ProductItem(props: Props) {
     async function deleteProduct() {
         try {
-            const data = await api.deleteProduct(props.data.id);
+            await api.deleteProduct(props.data.id);
             props.onDelete();
         } catch (error) {
             console.error(error);

@@ -31,7 +31,7 @@ export default function EditProductModal(props: Props) {
         };
 
         try {
-            const response = await api.updateProduct(props.product.id, product);
+            await api.updateProduct(props.product.id, product);
             props.onUpdate({ ...product, id: props.product.id });
             props.onClose();
         } catch (error) {
