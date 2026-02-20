@@ -1,6 +1,6 @@
 import "./CreateProductModal.scss";
 import { api } from "../../api";
-import type { Product, ProductBody } from "../../../shared/types/app";
+import type { Product, ProductBody } from "../../types/app.js";
 
 interface Props {
     onClose: () => void;

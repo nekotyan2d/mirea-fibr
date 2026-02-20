@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Product, ProductBody } from "../shared/types/app";
+import type { Product, ProductBody } from "./types/app.js";
 
 const apiClient = axios.create({
     baseURL: "http://localhost:3000/api",

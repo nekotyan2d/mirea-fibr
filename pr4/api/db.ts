@@ -1,4 +1,4 @@
-import { Product, ProductBody } from "../shared/types/app";
+import { Product, ProductBody } from "./types/app.js";
 import { nanoid } from "nanoid";
 
 const products: Product[] = [

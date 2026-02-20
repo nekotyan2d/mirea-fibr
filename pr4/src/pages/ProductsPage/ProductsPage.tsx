@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CreateProductModal from "../../components/CreateProductModal/CreateProductModal";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import "./ProductsPage.scss";
-import type { Product } from "../../../shared/types/app";
+import type { Product } from "../../types/app.js";
 import { api } from "../../api";
 import EditProductModal from "../../components/EditProductModal/EditProductModal";
 

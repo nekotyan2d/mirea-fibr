@@ -1,4 +1,4 @@
-import type { Product } from "../../../shared/types/app";
+import type { Product } from "../../types/app.js";
 import ProductItem from "../ProductItem/ProductItem";
 import "./ProductsList.scss";
 
