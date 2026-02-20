@@ -16,7 +16,7 @@ FROM node:24-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/package.json ./
+COPY --from=build /app/package.json ./
 COPY --from=build /app/dist .
 COPY --from=build /app/node_modules ./node_modules
 
