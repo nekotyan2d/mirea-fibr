@@ -5,6 +5,7 @@ export function getProductById(req: Request, res: Response) {
     const { id } = req.params;
     const product = dbGetProductById(id as string);
 
+    // проверяем, найден ли товар
     if (!product) {
         return res.status(404).json({ message: "Product not found" });
     }

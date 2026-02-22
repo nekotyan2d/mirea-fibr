@@ -12,6 +12,7 @@ export default function ProductItem(props: Props) {
     async function deleteProduct() {
         try {
             await api.deleteProduct(props.data.id);
+            // сообщаем родителю об удалении товара
             props.onDelete();
         } catch (error) {
             console.error(error);

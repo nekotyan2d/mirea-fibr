@@ -23,11 +23,13 @@ export default function ProductsPage() {
     }
 
     function onEditProduct(id: string) {
-        setSelectedProduct(Number(id));
+        // находим товар и открываем модалку
+        setSelectedProduct(products.findIndex((product) => product.id === id));
         setShowEditProductModal(true);
     }
 
     function onDeleteProduct(id: string) {
+        // удаляем товар
         setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
     }
 
@@ -65,7 +67,7 @@ export default function ProductsPage() {
             )}
             {showEditProductModal && (
                 <EditProductModal
-                    product={products.find((p) => p.id === "edit-product-id") || products[0]}
+                    product={products[selectedProduct!]}
                     onClose={() => setShowEditProductModal(false)}
                     onUpdate={(updatedProduct) => {
                         setProducts((prevProducts) =>

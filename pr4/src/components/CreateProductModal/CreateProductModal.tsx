@@ -8,14 +8,19 @@ interface Props {
 }
 
 export default function CreateProductModal(props: Props) {
+    // при нажатии вне модалки
     function onBackdropClick(event: React.MouseEvent<HTMLDivElement>) {
+        // проверяем чтобы таргет был бэкдропом
         if (event.target === event.currentTarget) {
             props.onClose();
         }
     }
 
-    async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    // при сабмите формы
+    async function onSubmit(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault();
+
+        // извлекаем данные из формы
         const formData = new FormData(event.currentTarget);
         const data = Object.fromEntries(formData);
 
@@ -32,6 +37,7 @@ export default function CreateProductModal(props: Props) {
         try {
             const response = await api.createProduct(product);
             console.log(response);
+            // сообщаем родителю о новом товаре
             props.onCreate(response.product);
             props.onClose();
         } catch (error) {

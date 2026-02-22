@@ -1,6 +1,7 @@
 import { Product, ProductBody } from "./types/app.js";
 import { nanoid } from "nanoid";
 
+// хранилище
 const products: Product[] = [
     {
         id: nanoid(6),
@@ -69,6 +70,7 @@ export function getProductById(id: string) {
 export function updateProduct(id: string, data: ProductBody) {
     const i = products.findIndex((product) => product.id === id);
 
+    // заменяем, либо оставляем старое значение
     products[i] = {
         name: data.name || products[i].name,
         category: data.category || products[i].category,
@@ -83,6 +85,8 @@ export function updateProduct(id: string, data: ProductBody) {
 
 export function deleteProduct(id: string) {
     const i = products.findIndex((product) => product.id === id);
+
+    if (i == -1) return;
 
     products.splice(i, 1);
 }

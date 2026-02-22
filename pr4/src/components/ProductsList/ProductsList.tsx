@@ -4,22 +4,19 @@ import "./ProductsList.scss";
 
 interface Props {
     products: Product[];
+    // события для информирования родителя
     onDelete: (id: string) => void;
     onEdit: (id: string) => void;
 }
 
 export default function ProductsList(props: Props) {
-    function onDelete(id: string) {
-        props.onDelete(id);
-    }
-
     return (
         <div className="products-list">
             {props.products.map((product) => (
                 <ProductItem
                     data={product}
                     key={product.id}
-                    onDelete={() => onDelete(product.id)}
+                    onDelete={() => props.onDelete(product.id)}
                     onEdit={() => props.onEdit(product.id)}
                 />
             ))}

@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 export function createProduct(req: Request, res: Response) {
     const { name, category, description, price, amount, rating, photo } = req.body;
 
+    // создаем объект товар
     const newProduct = {
         name,
         category,
@@ -16,6 +17,7 @@ export function createProduct(req: Request, res: Response) {
         id: nanoid(6),
     };
 
+    // добавляем товар в бд
     dbCreateProduct(newProduct);
 
     return res.status(200).json({ message: "Product created", product: newProduct });
