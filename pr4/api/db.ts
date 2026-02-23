@@ -19,8 +19,8 @@ const products: Product[] = [
         category: "cats",
         description: "Кот в прайме",
         price: 999,
-        amount: 1000,
-        rating: 4,
+        amount: 100,
+        rating: 2,
         photo: "/images/cat.jpg",
     },
     {
@@ -30,7 +30,7 @@ const products: Product[] = [
         description: "Кот в прайме",
         price: 999,
         amount: 1000,
-        rating: 4,
+        rating: 1,
         photo: "/images/cat.jpg",
     },
     {
@@ -39,8 +39,8 @@ const products: Product[] = [
         category: "cats",
         description: "Кот в прайме",
         price: 999,
-        amount: 1000,
-        rating: 4,
+        amount: 10,
+        rating: 5,
         photo: "/images/cat.jpg",
     },
     {
@@ -48,9 +48,9 @@ const products: Product[] = [
         name: "Кот в прайме",
         category: "cats",
         description: "Кот в прайме",
-        price: 999,
+        price: 10000,
         amount: 1000,
-        rating: 4,
+        rating: 1,
         photo: "/images/cat.jpg",
     },
 ];
