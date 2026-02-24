@@ -45,7 +45,12 @@ app.use(
                     },
                 ],
             },
-            apis: [`${__dirname}/app.ts`, `${__dirname}/controllers/*.ts`],
+            apis: [
+                `${__dirname}/app.ts`,
+                `${__dirname}/controllers/*.ts`,
+                `${__dirname}/app.js`,
+                `${__dirname}/controllers/*.js`,
+            ],
         }),
     ),
 );
