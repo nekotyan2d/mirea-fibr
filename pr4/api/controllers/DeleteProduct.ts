@@ -3,6 +3,12 @@ import { Request, Response } from "express";
 
 export function deleteProduct(req: Request, res: Response) {
     const { id } = req.params;
+
+    // валидация
+    if (!id) {
+        return res.status(400).json({ message: "Missing product ID" });
+    }
+
     const product = dbGetProductById(id as string);
 
     // проверяем, найден ли товар
