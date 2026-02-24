@@ -3,6 +3,12 @@ import { Request, Response } from "express";
 
 export function updateProduct(req: Request, res: Response) {
     const { id } = req.params;
+
+    // валидация
+    if (!id) {
+        return res.status(400).json({ message: "Missing product ID" });
+    }
+
     const product = dbGetProductById(id as string);
 
     // проверяем, найден ли товар
@@ -12,6 +18,19 @@ export function updateProduct(req: Request, res: Response) {
 
     // извлекаем параметры из body
     const { name, category, description, price, amount, rating, photo } = req.body;
+
+    // валидация
+    if (
+        !name ||
+        !category ||
+        !description ||
+        price === undefined ||
+        amount === undefined ||
+        rating === undefined ||
+        !photo
+    ) {
+        return res.status(400).json({ message: "Missing required fields" });
+    }
 
     // делаем замену. Если какой-либо параметр не был предоставлен, то будет использоваться старое
     dbUpdateProduct(id as string, { name, category, description, price, amount, rating, photo });

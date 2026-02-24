@@ -5,6 +5,19 @@ import { nanoid } from "nanoid";
 export function createProduct(req: Request, res: Response) {
     const { name, category, description, price, amount, rating, photo } = req.body;
 
+    // валидация
+    if (
+        !name ||
+        !category ||
+        !description ||
+        price === undefined ||
+        amount === undefined ||
+        rating === undefined ||
+        !photo
+    ) {
+        return res.status(400).json({ message: "Missing required fields" });
+    }
+
     // создаем объект товар
     const newProduct = {
         name,
