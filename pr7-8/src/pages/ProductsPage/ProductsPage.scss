@@ -1,0 +1,57 @@
+.page {
+    padding: 8px;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .user-name {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .add-product {
+        background-color: #171717;
+        color: rgb(66, 229, 229);
+        height: 150px;
+        width: 100%;
+        font-size: 48px;
+        margin-bottom: 8px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #101010;
+        }
+    }
+
+    .logout {
+        color: rgb(253, 112, 112);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
