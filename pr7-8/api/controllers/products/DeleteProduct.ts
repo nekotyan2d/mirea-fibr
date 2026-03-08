@@ -7,6 +7,8 @@ import { Request, Response } from "express";
  *   delete:
  *     summary: Удаляет товар по ID
  *     tags: [Products]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

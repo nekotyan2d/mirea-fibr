@@ -7,6 +7,8 @@ import { Request, Response } from "express";
  *   patch:
  *     summary: Обновляет существующий товар
  *     tags: [Products]
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
