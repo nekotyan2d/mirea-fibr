@@ -61,11 +61,6 @@ app.use(
                         },
                     },
                 },
-                security: [
-                    {
-                        bearerAuth: [],
-                    },
-                ],
             },
             apis: [
                 `${__dirname}/app.ts`,

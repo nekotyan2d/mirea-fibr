@@ -8,6 +8,8 @@ import { getUserById } from "../../db.js";
  *     description: Получение информации о текущем пользователе
  *     tags:
  *       - Users
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Успешно

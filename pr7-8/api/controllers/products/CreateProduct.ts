@@ -8,6 +8,8 @@ import { nanoid } from "nanoid";
  *   post:
  *     summary: Создает новый товар
  *     tags: [Products]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
