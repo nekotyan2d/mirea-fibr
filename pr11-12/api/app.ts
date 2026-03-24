@@ -172,8 +172,8 @@ app.use(
 
 // products
 app.post("/api/products", authMiddleware, roleMiddleware(["seller"]), createProduct);
-app.get("/api/products", getProducts); // доступно всем, даже неавторизованным пользователям
-app.get("/api/products/:id", getProductById); // доступно всем, даже неавторизованным пользователям
+app.get("/api/products", authMiddleware, roleMiddleware(["user", "seller", "admin"]), getProducts);
+app.get("/api/products/:id", authMiddleware, roleMiddleware(["user", "seller", "admin"]), getProductById);
 app.patch("/api/products/:id", authMiddleware, roleMiddleware(["seller"]), updateProduct);
 app.delete("/api/products/:id", authMiddleware, roleMiddleware(["seller"]), deleteProduct);
 
