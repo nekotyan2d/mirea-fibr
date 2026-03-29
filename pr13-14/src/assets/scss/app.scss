@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    width: min(400px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #c1c1c1;
+    border-radius: 16px;
+}
+
+button {
+    background-color: #183a30;
+    color: white;
+    font-family: inherit;
+    padding: 8px 16px;
+    border-radius: 16px;
+}
