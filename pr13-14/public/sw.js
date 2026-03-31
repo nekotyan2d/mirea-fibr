@@ -1,7 +1,6 @@
-const CACHE_NAME = "v2";
+const CACHE_NAME = "v3";
 
 const urlsToCache = [
-    "/",
     "/icons/apple-touch-icon-57x57.png",
     "/icons/apple-touch-icon-114x114.png",
     "/icons/apple-touch-icon-120x120.png",
@@ -13,28 +12,33 @@ const urlsToCache = [
     "/icons/favicon-128x128.png",
     "/icons/favicon-256x256.png",
     "/icons/favicon-512x512.png",
-    "/icons/favicon.ico",
-    "/manifest.json",
 ];
 
 self.addEventListener("install", (event) => {
-    event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)));
-    self.skipWaiting();
+    event.waitUntil(
+        caches
+            .open(CACHE_NAME)
+            .then((cache) => cache.addAll(urlsToCache))
+            .then(() => self.skipWaiting()),
+    );
 });
 
 self.addEventListener("activate", (event) => {
     const cacheWhiteList = [CACHE_NAME];
 
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (!cacheWhiteList.includes(cacheName)) {
-                        return caches.delete(cacheName);
-                    }
-                }),
-            );
-        }),
+        caches
+            .keys()
+            .then((cacheNames) => {
+                return Promise.all(
+                    cacheNames.map((cacheName) => {
+                        if (!cacheWhiteList.includes(cacheName)) {
+                            return caches.delete(cacheName);
+                        }
+                    }),
+                );
+            })
+            .then(() => self.clients.claim()),
     );
 });
 
@@ -48,14 +52,18 @@ self.addEventListener("fetch", (event) => {
                 }
 
                 return fetch(event.request).then((networkResponse) => {
-                    return caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, networkResponse.clone());
-                        return networkResponse;
-                    });
+                    if (networkResponse && networkResponse.status == 200) {
+                        return caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, networkResponse.clone());
+                            return networkResponse;
+                        });
+                    }
+                    return networkResponse;
                 });
             })
             .catch(() => {
-                return fetch(event.request);
+                console.error("No network connection", event.request.url);
+                return;
             }),
     );
 });
