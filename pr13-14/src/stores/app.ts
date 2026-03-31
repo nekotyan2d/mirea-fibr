@@ -25,6 +25,7 @@ export const useAppStore = defineStore("app", () => {
         todoList.value.push({
             id: todoList.value.length,
             text: text,
+            isCompleted: false,
             createdAt: new Date().getTime(),
         });
     }
@@ -36,9 +37,17 @@ export const useAppStore = defineStore("app", () => {
         }
     }
 
+    function toggleTodoCompleted(id: number) {
+        const index = todoList.value.findIndex((item) => item.id === id);
+        if (index !== -1) {
+            todoList.value[index]!.isCompleted = !todoList.value[index]!.isCompleted;
+        }
+    }
+
     return {
         todoList,
         addTodo,
         removeTodo,
+        toggleTodoCompleted,
     };
 });

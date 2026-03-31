@@ -14,7 +14,8 @@
 
         <TodoList
             :todos="appStore.todoList"
-            @delete="onTodoDelete" />
+            @delete="onTodoDelete"
+            @complete="onTodoComplete" />
     </main>
 </template>
 <script lang="ts" setup>
@@ -36,6 +37,10 @@ function onTodoAdd() {
 
 function onTodoDelete(id: number) {
     appStore.removeTodo(id);
+}
+
+function onTodoComplete(id: number) {
+    appStore.toggleTodoCompleted(id);
 }
 </script>
 

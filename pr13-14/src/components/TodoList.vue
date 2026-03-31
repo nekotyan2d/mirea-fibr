@@ -4,7 +4,8 @@
             v-for="item in props.todos"
             :key="item.id"
             :data="item"
-            @delete="emit('delete', item.id)" />
+            @delete="emit('delete', item.id)"
+            @complete="emit('complete', item.id)" />
     </div>
 </template>
 <script lang="ts" setup>
@@ -17,6 +18,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
     (event: "delete", id: number): void;
+    (event: "complete", id: number): void;
 }>();
 </script>
 <style lang="scss" scoped>
